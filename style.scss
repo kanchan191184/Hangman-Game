@@ -3,11 +3,15 @@
 
 .main-heading {
   text-align: center;
-  font-size: 2em;
   color: $basic-color;
   margin-top: 20px;
 }
 
+.main-subheading {
+  text-align: center;
+  color: $dark-black;
+  margin-top: 40px;
+}
 .hangman-image img {
   @include flex-center;
   margin: 0 auto;
@@ -15,9 +19,8 @@
   border: 2px solid $dark-black;
 }
 .output {
+  @include message-text-style;
   margin: 10px;
-  font-size: 1.5em;
-  text-align: center;
   color: $dark-black;
 }
 .letters {
@@ -28,12 +31,10 @@
   margin: 0 auto;
 
   button {
+    @include button-border-style;
     margin: 5px;
-    padding: 10px;
-    border: 1px solid $dark-black;
     background-color: $basic-color;
     color: $basic-white;
-    cursor: pointer;
 
     &:disabled {
       background-color: $disabled-color;
@@ -45,23 +46,20 @@
 #incorrectGuessesId {
   margin-top: 20px;
   font-size: 1.2em;
-  //text-align: center;
+  text-align: center;
   margin-left: 30px;
   color: $danger;
 }
 
 .message {
+  @include message-text-style;
   margin-top: 20px;
-  font-size: 1.5em;
-  text-align: center;
 }
 
 #resetButton {
+  @include button-border-style;
+  @include flex-center;
   margin: 20px auto 0;
-  padding: 10px;
-  border: 1px solid $dark-black;
   background-color: $success;
   color: $basic-white;
-  @include flex-center;
-  cursor: pointer;
 }

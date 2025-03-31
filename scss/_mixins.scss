@@ -3,3 +3,17 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin button-border-style {
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@mixin message-text-style {
+  font-size: 1.5em;
+  text-align: center;
+}
