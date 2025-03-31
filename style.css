@@ -1,0 +1,71 @@
+.main-heading {
+  text-align: center;
+  font-size: 2em;
+  color: #9933ff;
+  margin-top: 20px;
+}
+
+.hangman-image img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 200px;
+  border: 2px solid #000000;
+}
+
+.output {
+  margin: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #000000;
+}
+
+.letters {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+}
+.letters button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #000000;
+  background-color: #9933ff;
+  color: #ffffff;
+  cursor: pointer;
+}
+.letters button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+#incorrectGuessesId {
+  margin-top: 20px;
+  font-size: 1.2em;
+  margin-left: 30px;
+  color: #ff0000;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#resetButton {
+  margin: 20px auto 0;
+  padding: 10px;
+  border: 1px solid #000000;
+  background-color: #00b33c;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

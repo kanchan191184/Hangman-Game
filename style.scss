@@ -1,0 +1,67 @@
+@use "./scss/colors" as *;
+@use "./scss/mixins" as *;
+
+.main-heading {
+  text-align: center;
+  font-size: 2em;
+  color: $basic-color;
+  margin-top: 20px;
+}
+
+.hangman-image img {
+  @include flex-center;
+  margin: 0 auto;
+  height: 200px;
+  border: 2px solid $dark-black;
+}
+.output {
+  margin: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  color: $dark-black;
+}
+.letters {
+  padding: 10px;
+  @include flex-center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+
+  button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid $dark-black;
+    background-color: $basic-color;
+    color: $basic-white;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: $disabled-color;
+      cursor: not-allowed;
+    }
+  }
+}
+
+#incorrectGuessesId {
+  margin-top: 20px;
+  font-size: 1.2em;
+  //text-align: center;
+  margin-left: 30px;
+  color: $danger;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#resetButton {
+  margin: 20px auto 0;
+  padding: 10px;
+  border: 1px solid $dark-black;
+  background-color: $success;
+  color: $basic-white;
+  @include flex-center;
+  cursor: pointer;
+}
