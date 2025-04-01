@@ -10,11 +10,15 @@ export const checkWinOrLoseConditions = (
     messageDiv.textContent = "Congratulations! You've guessed the word!";
     messageDiv.style.color = "green";
     disableAllButtons();
-  } else if (incorrectGuesses.length >= 6) {
+  } else if (incorrectGuesses.length >= 10) {
     messageDiv.textContent = "Game over! The word was: " + wordToGuess;
     messageDiv.style.color = "red";
     disableAllButtons();
   }
+};
+
+export const getRandomWord = (words) => {
+  return words[Math.floor(Math.random() * words.length)];
 };
 
 export const updateGuessedWord = (char, wordToGuess, guessedWord) => {
@@ -23,6 +27,7 @@ export const updateGuessedWord = (char, wordToGuess, guessedWord) => {
       guessedWord[i] = char;
     }
   }
+  return guessedWord;
 };
 
 export const trackIncorrectGuesses = (
@@ -38,6 +43,6 @@ export const trackIncorrectGuesses = (
       incorrectGuessesDiv.textContent =
         "Incorrect guesses: " + incorrectGuesses.join(", ");
     }
-    hangmanImage.src = `assets/hangman${incorrectGuesses.length}.jpg`;
+    hangmanImage.src = `assets/h-${incorrectGuesses.length}.jpg`;
   }
 };

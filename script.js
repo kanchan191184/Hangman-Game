@@ -1,5 +1,4 @@
 import {
-  getRandomWord,
   lettersDiv,
   outputDiv,
   incorrectGuessesDiv,
@@ -13,13 +12,20 @@ import {
 } from "./js/dom.js";
 import {
   checkWinOrLoseConditions,
+  getRandomWord,
   updateGuessedWord,
   trackIncorrectGuesses,
 } from "./js/game.js";
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  let words = ["JAVASCRIPT", "PYTHON", "HTML", "CSS", "NODEJS"];
+import exampleWords from "./assets/example-words.json"  with { type: "json" };
 
+document.addEventListener("DOMContentLoaded", (event) => {
+  //let words = ["JAVASCRIPT", "PYTHON", "HTML", "CSS", "NODEJS"];
+  let words = Array.isArray(exampleWords) 
+  ? exampleWords.map((word) => word.toUpperCase()) 
+  : [];
+
+  console.log(words);
   let wordToGuess, guessedWord, incorrectGuesses;
 
   const initializeGame = () => {
@@ -29,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     updateOutputDiv(outputDiv, guessedWord);
     incorrectGuessesDiv.textContent = " ";
     messageDiv.textContent = "";
-    hangmanImage.src = "assets/hangman0.jpg";
+    hangmanImage.src = "assets/h-0.jpg";
     enableAllButtons();
   };
 
@@ -40,7 +46,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     button.disabled = true;
 
     if (wordToGuess.includes(char)) {
-      updateGuessedWord(char, wordToGuess, guessedWord);
+      guessedWord = updateGuessedWord(char, wordToGuess, guessedWord);
       updateOutputDiv(outputDiv, guessedWord);
     } else {
       trackIncorrectGuesses(char, incorrectGuesses, incorrectGuessesDiv);

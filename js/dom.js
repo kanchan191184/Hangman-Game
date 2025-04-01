@@ -8,10 +8,6 @@ export const resetButton = document.querySelector("#resetButton");
 export const hangmanImage = document.querySelector("#hangmanImage");
 export const buttons = lettersDiv.querySelectorAll("button");
 
-export const getRandomWord = (words) => {
-  return words[Math.floor(Math.random() * words.length)];
-};
-
 export function disableAllButtons() {
   buttons.forEach((button) => {
     button.disabled = true;
